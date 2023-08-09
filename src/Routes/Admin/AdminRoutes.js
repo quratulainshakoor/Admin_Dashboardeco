@@ -7,7 +7,7 @@ import AdminLayout from '../../Layout/Admin/AdminLayout'
 import ProtectedAdminRoutes from './ProtectedAdminRoutes'
 
 import Login from '../../Pages/Admin/Login'
-// import Dashboard from '../../Pages/Admin/Dashboard'
+import Dashboard from '../../Pages/Admin/Dashboard'
 import Banners from '../../Pages/Admin/Banners'
 import BannerAdd from '../../Pages/Admin/BannerAdd'
 import Category from '../../Pages/Admin/Category'
@@ -27,6 +27,7 @@ import UserProfile from '../../Pages/Admin/UserProfile'
 import UserEdit from '../../Pages/Admin/UserEdit'
 import Profile from '../../Pages/Admin/Profile'
 import ProfileEdit from '../../Pages/Admin/ProfileEdit'
+import NotFoundPage from '../../Pages/Admin/Not Found/NotFoundPage'
 
 
 
@@ -44,7 +45,7 @@ const AdminRoutes = () => {
 
                   <Route element={<ProtectedAdminRoutes />} >
                       <Route path='/' element={<Navigate to={'/admin/dashboard'} />} />
-                      {/* <Route path='/dashboard' element={<Dashboard />} /> */}
+                      <Route path='/admin/dashboard' element={<Dashboard />} />
                       <Route path='/banners' element={<Banners />} />
                       <Route path='/banner/add' element={<BannerAdd />} />
                       <Route path='/category' element={<Category />} />
@@ -67,6 +68,7 @@ const AdminRoutes = () => {
                   </Route>
 
               </Route>
+                <Route path="*" element={<NotFoundPage />} />
           </Routes>
         {/* </Suspense> */}
     </>
